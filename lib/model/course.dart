@@ -56,4 +56,8 @@ class Course {
   String get title => _title;
 
   String get id => _id;
+
+  set isFavorite(bool value) {
+    _isFavorite = value;
+  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_course/arguments/course_argument.dart';
+import 'package:flutter_online_course/details/course_details.dart';
 import 'package:flutter_online_course/screen/home/course_home.dart';
 import 'package:flutter_online_course/screen/intro/intro_screen.dart';
 import 'package:flutter_online_course/utils/route_name.dart';
@@ -22,6 +24,14 @@ class MyApp extends StatelessWidget {
       routes: {
         RouteNames.intro: (context) => const IntroScreen(),
         RouteNames.courseHome: (context) => const CourseHome(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == RouteNames.courseDetails) {
+          //Lets create course argument to pass to course details screen
+          final args = settings.arguments as CourseArgument;
+          return MaterialPageRoute(
+              builder: (context) => CourseDetails(course: args.course));
+        }
       },
     );
   }
