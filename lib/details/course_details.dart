@@ -31,9 +31,14 @@ class CourseDetails extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.arrow_back,
-                              color: Colors.grey.shade800,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: Colors.grey.shade800,
+                              ),
                             ),
                           ),
                           Row(
@@ -47,9 +52,14 @@ class CourseDetails extends StatelessWidget {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Icon(
-                                  Icons.shopping_cart,
-                                  color: Colors.grey.shade800,
+                                child: InkWell(
+                                  onTap: () {
+                                    Util.openShoppingCart(context);
+                                  },
+                                  child: Icon(
+                                    Icons.shopping_cart,
+                                    color: Colors.grey.shade800,
+                                  ),
                                 ),
                               ),
                             ],
@@ -279,8 +289,10 @@ class CourseDetails extends StatelessWidget {
                                 ShoppingCartDataProvider.addCourse(course);
                               }
                               //Lets show message in snackbar, so lets create
-                              Util.showMessageWithAction(context, message, "View", () {
-                                  //Lets Open shopping Cart list here
+                              Util.showMessageWithAction(
+                                  context, message, "View", () {
+                                //Lets Open shopping Cart list here
+                                Util.openShoppingCart(context);
                               });
                               //Now lets create shopping cart
                             },

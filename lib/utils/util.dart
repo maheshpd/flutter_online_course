@@ -22,4 +22,8 @@ class Util {
       ),
     );
   }
+
+  static void openShoppingCart(BuildContext context) {
+    Navigator.pushNamed(context, "/shoppingCart");
+  }
 }
