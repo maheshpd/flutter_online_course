@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_course/arguments/checkout_argument.dart';
 import 'package:flutter_online_course/constants.dart';
 import 'package:flutter_online_course/data_provider/shopping_cart_data_provider.dart';
 import 'package:flutter_online_course/model/course.dart';
+import 'package:flutter_online_course/utils/route_name.dart';
 
 class ShoppingCartScreen extends StatefulWidget {
   const ShoppingCartScreen({Key? key}) : super(key: key);
@@ -123,7 +125,12 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
               width: double.infinity,
               margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //Lets open checkout screen from this button
+                    Navigator.pushNamed(context, RouteNames.checkout,
+                        arguments:
+                            CheckoutArgument(cartCourseList, totalAmount));
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: kPrimaryColor,
                       padding: EdgeInsets.zero,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_online_course/constants.dart';
 import 'package:flutter_online_course/data_provider/shopping_cart_data_provider.dart';
-import 'package:flutter_online_course/details/widget/favorite_option.dart';
 import 'package:flutter_online_course/model/course.dart';
 import 'package:flutter_online_course/model/section.dart';
+import 'package:flutter_online_course/screen/details/widget/favorite_option.dart';
 import 'package:flutter_online_course/utils/util.dart';
 import 'package:readmore/readmore.dart';
 
